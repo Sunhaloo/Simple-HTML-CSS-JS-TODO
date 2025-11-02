@@ -1,0 +1,666 @@
+/* colours for the light theme */
+:root {
+  --background: #f8f9fa;
+  --foreground: #212529;
+  --cursor: #0d6efd;
+  --cursor-text-color: #ffffff;
+  --selection-background: #e9ecef;
+  --selection-foreground: #495057;
+  --black: #000000;
+  --dark-grey: #6c757d;
+  --red: #dc3545;
+  --dark-red: #a71e2a;
+  --green: #28a745;
+  --dark-green: #1e7e34;
+  --yellow: #ffc107;
+  --dark-yellow: #d39e00;
+  --blue: #0d6efd;
+  --dark-blue: #0056b3;
+  --magenta: #6f42c1;
+  --dark-magenta: #5a32a3;
+  --cyan: #17a2b8;
+  --dark-cyan: #117a8b;
+  --white: #e9ecef;
+  --dark-white: #dee2e6;
+}
+
+/* colours for the dark theme */
+:root.dark-mode {
+  --background: #121212;
+  --foreground: #e9ecef;
+  --selection-background: #495057;
+  --selection-foreground: #f8f9fa;
+  --cursor: #0d6efd;
+  --cursor-text-color: #000000;
+  --black: #212529;
+  --dark-grey: #495057;
+  --red: #ea4343;
+  --dark-red: #c82333;
+  --green: #28a745;
+  --dark-green: #1e7e34;
+  --yellow: #ffc107;
+  --dark-yellow: #d39e00;
+  --blue: #6ea8fe;
+  --dark-blue: #3d73c5;
+  --magenta: #b19cd9;
+  --dark-magenta: #9e7fcc;
+  --cyan: #6edff6;
+  --dark-cyan: #4bb5d7;
+  --white: #ced4da;
+  --dark-white: #adb5bd;
+}
+
+/* styling that is going to be applied to all properties */
+* {
+  /* remove all the margin and padding */
+  margin: 0;
+  padding: 0;
+  /* use `box-sizing` to make all elements similar */
+  box-sizing: border-box;
+  /* change the font to desired font */
+  font-family: "Momo Trust Sans", sans-serif;
+}
+
+/* style the `body` tag / element for the 'light' and 'dark' mode */
+body {
+  /* set the background color */
+  background-color: var(--background);
+  /* set the text colour when in light mode */
+  color: var(--foreground);
+}
+
+/* style every `<section>` tag found on the page */
+section {
+  /* add margin to the top and bottom only */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  /* add padding to the top and bottom only */
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+/* style all the `<h3>` tags found on the page */
+h3 {
+  /* add margin to the bottom only */
+  margin-bottom: 0.5rem;
+  /* change the colour of the text */
+  /* color: var(--dark-grey); */
+  color: var(--foreground);
+  /* style the font ( change font size and weight ) */
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* style all the `<h4>` tags found on the page */
+h4 {
+  /* add margin to the bottom only */
+  margin-bottom: 0.5rem;
+  /* change the colour of the text */
+  color: var(--foreground);
+  /* style the font ( change font size and weight ) */
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+/* style every `<input>`and `<button>` tags found on the page */
+input:not([type="checkbox"]),
+button {
+  /* remove all styling set by the browser */
+  appearance: none;
+  /* remove all the borders */
+  border: none;
+  /* remove all the outlines */
+  outline: none;
+  /* remove all the background */
+  background: none;
+  /* reset the `cursor` property to its default value */
+  cursor: initial;
+}
+
+/* style the navigation bar */
+.navbar {
+  /* change display mode to `flex` */
+  display: flex;
+  /* send all the elements to the "extreme" sides */
+  justify-content: space-between;
+  /* add padding around the whole thing */
+  padding: 8px;
+  /* change the background colour */
+  background-color: var(--selection-foreground);
+}
+
+/* styles that applies both to the navbar logo and toggle theme button */
+.text-logo,
+.theme-toggle-button {
+  /* add padding around the whole thing */
+  padding: 2px 20px 2px 20px;
+  /* add a border */
+  border: 1px solid white;
+  /* add a little border radius */
+  border-radius: 10px;
+  /* change the background colour */
+  background-color: var(--dark-grey);
+  /* change the text colour of the text */
+  color: var(--cursor-text-color);
+}
+
+/* styling that only applies to the navbar logo */
+.text-logo {
+  /* change the margin ( right only ) of the 'text' logo */
+  margin-left: 50px;
+}
+
+/* styling that only applies to the toggle theme button */
+.theme-toggle-button {
+  /* ensure proper box sizing */
+  box-sizing: border-box;
+  /* change the margin ( left only ) of the 'toggle theme' button */
+  margin-right: 50px;
+  /* add a some padding */
+  padding: 8px 15px;
+  /* add a little animation to on all button properties */
+  transition: 0.18s ease-in-out;
+  /* add background and padding */
+  background-color: var(--selection-background);
+  /* remove all the borders */
+  border: none;
+  /* add a border radius */
+  border-radius: 5px;
+  /* color for the icon */
+  color: var(--foreground);
+  /* change the cursor to the 'pointer' when on button */
+  cursor: pointer;
+}
+
+/* style the button when the cursor hover overs it */
+.theme-toggle-button:hover {
+  /* change the background colour */
+  background-color: var(--selection-foreground);
+  /* change the text colour */
+  color: var(--background);
+}
+
+/* style the button when the user clicks it */
+.theme-toggle-button:active {
+  /* change the size / scale --> reduce the scale */
+  transform: scale(0.98);
+}
+
+/* style the toggle theme button when in dark mode specifically */
+:root.dark-mode .theme-toggle-button {
+  /* change the background colour */
+  background-color: var(--dark-grey);
+  /* change the text colour */
+  color: var(--foreground);
+}
+
+/* style the toggle theme button when in dark mode specifically and on cursor hover */
+:root.dark-mode .theme-toggle-button:hover {
+  /* change the background colour */
+  background-color: var(--foreground);
+  /* change the text colour */
+  color: var(--background);
+}
+
+/* styling for the icon inside the theme toggle button */
+.theme-toggle-button .material-icons,
+.theme-toggle-button .material-symbols-outlined {
+  /* align the icon in the middle vertically */
+  vertical-align: middle;
+  /* change the font size */
+  font-size: 1.2rem;
+  /* change the text colour ==> make sure inheriting the proper colour */
+  color: inherit;
+}
+
+/* additional styling for material symbols */
+.material-symbols-outlined {
+  /* refer to 'fonts.google.com/icons' for additional documentation */
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 300,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+/* style the main `<section>` and `<h1>` tag */
+.greeting-sections .greetings-heading-header {
+  /* change display mode to `flex` */
+  display: flex;
+}
+
+/* style the main `<section>` and `<h1>` tag but target the `<input>` tag */
+.greeting-sections .greetings-heading-header input {
+  /* make the flex container "responsive" ( take all the space ) */
+  flex: 1 1 0%;
+  /* change the margin ( right only ) */
+  margin-left: 0.5rem;
+  /* change the width that the container takes */
+  max-width: 100%;
+}
+
+/* style the `<section>`, `<h1>`, and its `<input>` tag */
+.greeting-sections .greetings-heading-header,
+.greeting-sections .greetings-heading-header input {
+  /* change the text colour */
+  color: var(--foreground);
+  /* change the font size */
+  font-size: 1.5rem;
+  /* change the weight of the font */
+  font-weight: 700;
+}
+
+/* style the `<section>` and `<input>` handles the creation of TODO */
+.create-todo-section input[type="text"] {
+  /* change display mode to `block` */
+  display: block;
+  /* use the full width */
+  width: 75%;
+  /* change the padding */
+  padding: 1rem 1.5rem;
+  /* add a margin to the bottom only */
+  margin-bottom: 1.5rem;
+  /* change the border radius */
+  border-radius: 0.5rem;
+  /* change the font size */
+  font-size: 1.125rem;
+  /* add a background colour */
+  background-color: var(--white);
+  /* change the colour of the text */
+  color: var(--foreground);
+  /* use `box-shadow` to change shadow of 'box' elements */
+  box-shadow: var(--black);
+}
+
+/* style the `<input>` tag specifically for 'dark' mode */
+:root.dark-mode .create-todo-section input[type="text"] {
+  /* add a border */
+  border: 1px solid var(--dark-grey);
+  /* change the background colour */
+  background-color: var(--background);
+  /* change the text colour */
+  color: var(--foreground);
+}
+
+/* style the `<section>` and `<select>` of the TODO */
+.create-todo-section .category-options {
+  /* change display mode to `flex` */
+  display: flex;
+  /* position the elements at the start */
+  justify-content: flex-start;
+  /* change the margin for at the bottom only */
+  margin-bottom: 1.5rem;
+  /* take the whole available width */
+  width: 100%;
+}
+
+/* style the `<select>` tag */
+.create-todo-section select {
+  /* ensure it stays in position during zoom */
+  box-sizing: border-box;
+  /* change the overall width */
+  width: 100%;
+  /* overall width takes from start to the middle */
+  max-width: 500px;
+  /* change the padding */
+  padding: 0.8rem 1.2rem;
+  /* add a border */
+  border: 1px solid var(--selection-background);
+  /* set border radius */
+  border-radius: 0.5rem;
+  /* change font size */
+  font-size: 1.125rem;
+  /* change the background color */
+  background-color: var(--white);
+  /* change the text color */
+  color: var(--foreground);
+  /* change the box shadow */
+  box-shadow: var(--black);
+  /* change the cursor to 'hand' */
+  cursor: pointer;
+
+  /* NOTE: you cannot hide the scrollbar */
+  /* you are going to have to implement a custom drop down menu for that */
+}
+
+/* style the `<select>` tag in 'dark' mode */
+:root.dark-mode .create-todo-section select {
+  /* add a boder to the  */
+  border: 1px solid var(--dark-grey);
+  /* change the background colour */
+  background-color: var(--background);
+  /* change the text colour */
+  color: var(--foreground);
+}
+
+/* style the button responsible for the adding of TODO */
+.form-submit-button {
+  /* change display mode to `flex` */
+  display: flex;
+  /* center the button 'vertically' on the page */
+  align-items: center;
+  /* add a padding */
+  padding: 12px;
+  /* add a border radius */
+  border-radius: 0.5rem;
+  /* change the background colour */
+  background-color: var(--white);
+  /* change the text colour of text */
+  color: var(--foreground);
+}
+
+/* style the button when the cursor hover overs it */
+.form-submit-button:hover {
+  /* change the background colour */
+  background-color: var(--selection-foreground);
+  /* change the text colour */
+  color: var(--background);
+}
+
+/* style the button when the user clicks it */
+.form-submit-button:active {
+  /* change the size / scale --> reduce the scale */
+  transform: scale(0.98);
+}
+
+/* style the add TODO button when in dark mode specifically and on cursor hover */
+:root.dark-mode .form-submit-button:hover {
+  /* change the background colour */
+  background-color: var(--foreground);
+  /* change the text colour */
+  color: var(--background);
+}
+
+/* style the icon found inside the TODO submit button */
+.form-submit-button i {
+  /* change display mode to inline-flex` */
+  display: inline-flex;
+  /* add a margin to the left only */
+  margin-left: 8px;
+  /* change the font size */
+  font-size: 16px;
+}
+
+/* style the TODO submit button specifically in dark mode */
+:root.dark-mode .form-submit-button {
+  /* add a boder to the  */
+  border: 1px solid var(--dark-grey);
+  /* change the background colour */
+  background-color: var(--background);
+  /* change the text colour */
+  color: var(--foreground);
+}
+
+/* remove all the ( default ) checkboxes */
+input[type="checkbox"] {
+  /* don't display the checkboxes */
+  display: none;
+}
+
+/* style the individual checkboxes for TODO item */
+.bubble-business {
+  /* change display mode to `flex` */
+  display: flex;
+  /* center the button 'horizontally' on the page */
+  justify-content: center;
+  /* center the button 'vertically' on the page */
+  align-items: center;
+  /* change the overall width and height */
+  width: 20px;
+  height: 20px;
+  /* add a border */
+  border: 2px solid var(--foreground);
+  /* change the border radius */
+  border-radius: 50%;
+  /* add a little shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* add a little animation on all properties */
+  transition: all 0.3s ease;
+}
+
+/* style the checkbox / 'circle' specifically for dark mode */
+:root.dark-mode .bubble-business {
+  /* change the border colour */
+  border-color: var(--foreground);
+}
+
+/* style the checkboxes for TODO after they have been completed */
+.bubble-business::after {
+  /* change display mode to `block` */
+  display: block;
+  /* change the width and the height to basically nothing */
+  width: 0px;
+  height: 0px;
+  /* add a border radius */
+  border-radius: 50%;
+  /* change the opacity to basically nothing */
+  opacity: 0;
+  /* change the background colour */
+  background-color: var(--green);
+  /* add a little animation on all the properties */
+  transition: 0.3s ease-in-out;
+  /* remove all the content / text items inside */
+  content: "";
+}
+
+/* select the `input:checked` and `bubble-business` together */
+input:checked ~ .bubble-business {
+  /* change the background colour */
+  background-color: var(--green);
+  /* change the border colour */
+  border-color: var(--green);
+}
+
+/* select the `input:checked` and `bubble-business::after` together */
+input:checked ~ .bubble-business::after {
+  /* change the overall width and height */
+  width: 10px;
+  height: 10px;
+  /* remove all borders */
+  border: none;
+  /* change the background color */
+  background-color: var(--green);
+  /* change the opacity to display */
+  opacity: 1;
+}
+
+/* style both the entire section for displaying the TODO items */
+.todo-form-section #todo-list {
+  /* change display mode to `flex` */
+  display: flex;
+  /* change the direction of `flex` from main-axis to cross-axis */
+  flex-direction: column;
+}
+
+/* style the TODO display section and the actual TODO item lists */
+.todo-form-section .list {
+  /* change display mode to `flex` */
+  display: flex;
+  /* center the items 'vertically' on the page */
+  align-items: center;
+  /* add a margin and a padding */
+  margin: 1rem 0;
+  padding: 1rem;
+  /* add a margin to the bottom only */
+  margin-bottom: 0.5rem;
+  /* add a border radius */
+  border-radius: 0.5rem;
+  /* change the background colour */
+  background-color: var(--white);
+  /* add a little shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* apply a little animation on the background colour and shadow */
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Dark mode styling for TODO list items */
+:root.dark-mode .todo-form-section .list {
+  /* change the background colour */
+  background-color: var(--selection-background);
+  /* add a little shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.todo-item label {
+  /* change display mode to `block` */
+  display: block;
+  /* change the margin of the right side only */
+  margin-right: 1rem;
+  /* change the cursor to a 'hand' pointer */
+  cursor: pointer;
+}
+
+/* style the TODO display section and also the actual content of the TODO item */
+.todo-form-section .todo-content {
+  /* make the flex container "responsive" ( take all the space ) */
+  flex: 1 1 0%;
+}
+
+/* style also the `<input>` tag when inserting / changing content of TODO item */
+.todo-form-section .todo-content input {
+  /* take the whole available width */
+  width: 100%;
+  /* add a padding */
+  padding: 0.5rem;
+  /* remove all the border and outline */
+  border: none;
+  outline: none;
+  /* change the background colour */
+  background: transparent;
+  /* change the text colour */
+  color: var(--foreground);
+  /* change the font size */
+  font-size: 1.125rem;
+}
+
+/* style the TODO content itself */
+:root.dark-mode .todo-form-section .todo-content input {
+  /* change the text colour */
+  color: var(--foreground);
+}
+
+/* style the `<div>` containing the buttons */
+.todo-form-section .todo-action {
+  /* change display mode to `flex` */
+  display: flex;
+  /* center the button 'vertically' on the page */
+  align-items: center;
+}
+
+/* style the individual buttons found inside the `<div>` tag */
+.todo-form-section .todo-action button {
+  /* change display mode to `block` */
+  display: block;
+  /* add a margin to the left only */
+  margin-left: 0.5rem;
+  /* add a padding around */
+  padding: 0.5rem 1rem;
+  /* remove all the border */
+  border: none;
+  /* add a border radius */
+  border-radius: 0.25rem;
+  /* change the text colour */
+  /* change the cursor to a 'hand' pointer */
+  color: var(--white);
+  cursor: pointer;
+  /* change the font weight */
+  font-weight: 500;
+  /* add a little animation on all properties */
+  transition: 0.2s ease-in-out;
+}
+
+/* style the 'Edit' button */
+.todo-form-section .todo-action .todo-edit-button {
+  /* change the background colour */
+  background-color: var(--blue);
+}
+
+/* style the 'Edit' button on cursor 'hover' */
+.todo-form-section .todo-action .todo-edit-button:hover {
+  /* change the background colour */
+  background-color: var(--dark-blue);
+}
+
+/* style the 'Delete' button */
+.todo-form-section .todo-action .todo-delete-button {
+  /* change the background colour */
+  background-color: var(--red);
+}
+
+/* style the 'Delete' button on cursor 'hover' */
+.todo-form-section .todo-action .todo-delete-button:hover {
+  /* change the background colour */
+  background-color: var(--dark-red);
+}
+
+/* style the 'Edit' button specifically in 'Dark' mode */
+:root.dark-mode .todo-form-section .todo-action .todo-edit-button {
+  /* change the background colour */
+  background-color: var(--blue);
+}
+
+/* style the 'Edit' button on cursor 'hover' specifically in 'Dark' mode */
+:root.dark-mode .todo-form-section .todo-action .todo-edit-button:hover {
+  /* change the background colour */
+  background-color: var(--dark-blue);
+}
+
+/* style the 'Delete' button specifically in 'Dark' mode */
+:root.dark-mode .todo-form-section .todo-action .todo-delete-button {
+  /* change the background colour */
+  background-color: var(--red);
+}
+
+/* style the 'Delete' button on cursor 'hover' specifically in 'Dark' mode */
+:root.dark-mode .todo-form-section .todo-action .todo-delete-button:hover {
+  /* change the background colour */
+  background-color: var(--dark-red);
+}
+
+/* style the TODO item when they are checked off */
+.todo-item input[type="checkbox"]:checked ~ .todo-content input {
+  /* change the colour of the text */
+  color: var(--dark-grey);
+  /* add a strikethrough */
+  text-decoration: line-through;
+}
+
+/* style the completed / check-off TODOs specifically in 'Dark' mode */
+:root.dark-mode
+  .todo-item
+  input[type="checkbox"]:checked
+  ~ .todo-content
+  input {
+  /* change the text colour */
+  color: var(--selection-foreground);
+}
+
+/* style the TODO items when they are completed */
+.list.done {
+  /* decrease the opacity */
+  opacity: 0.7;
+  /* change the background colour */
+  background-color: var(--selection-background);
+}
+
+/* style the TODO items when they are completed specifically in 'Dark' mode */
+:root.dark-mode .list.done {
+  /* change the background colour */
+  background-color: var(--dark-grey);
+}
+
+/* style the TODO items when they are done and trying to input */
+.list.done .todo-content input {
+  /* add a strikethrough */
+  text-decoration: line-through;
+  /* change the text colour */
+  color: var(--dark-grey);
+}
+
+/* style the TODO items when they are done and trying to input specifically in 'Dark' mode */
+:root.dark-mode .list.done .todo-content input {
+  /* change the text coluur */
+  color: var(--selection-foreground);
+}

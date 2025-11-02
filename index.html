@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TODO Application</title>
+    <link href="style.css" rel="stylesheet" />
+    <!-- link / add "material" icons from Google -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- link / add the 'Momo Trust Sans' font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header that is going to contain our navigation bar -->
+    <header>
+      <!-- our navigation bar that is going at the top -->
+      <nav class="navbar">
+        <!-- "text" logo that will be displayed to the left -->
+        <div class="text-logo">
+          <h1>TODO APP</h1>
+        </div>
+        <!-- 'toggle theme' button that is going to be displayed on the right -->
+        <button id="theme-button" class="theme-toggle-button">
+          <!-- text inside the button is an icon -->
+          <i class="material-symbols-outlined">light_mode</i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- use the `main` tag to define the whole TODO application -->
+    <main class="todo-app">
+      <!-- section that is going to be for the heading only -->
+      <section class="greeting-sections">
+        <h1 class="greetings-heading-header">
+          <span id="greetings-heading"></span>
+          <!-- user is going to be able to enter his username and should be saved -->
+          <input id="username" type="text" placeholder="User's Name" />
+        </h1>
+
+        <!-- heading that is going to display the current date -->
+        <h4><span id="current-date" class="date-heading"></span></h4>
+      </section>
+
+      <!-- section that is going to be for the creation of the TODOs -->
+      <section class="create-todo-section">
+        <h3 class="create-todo-heading">Create A TODO</h3>
+
+        <!-- our main `form` that is going to handle the user input for TODO -->
+        <form class="new-todo-form">
+          <h4>What Do You Want To Add?</h4>
+
+          <!-- the actual input bar that the user is going to write TODOs -->
+          <input
+            id="input-todo"
+            type="text"
+            name="content"
+            placeholder="Implement AI in workflow"
+          />
+
+          <h4>TODO Category</h4>
+
+          <!-- use the drop down menu to select TODO category -->
+          <div class="category-options">
+            <select class="drop-down-category" name="category" required>
+              <!-- this value is already selected by default -->
+              <option value="miscellaneous" selected hidden>
+                ❓ Miscellaneous
+              </option>
+
+              <!-- these are the selectables category -->
+              <option value="coding">💻 Coding</option>
+              <option value="debugging">🐛 Debugging</option>
+              <option value="testing">✅ Testing</option>
+              <option value="documentation">📄 Documentation</option>
+              <option value="meeting">👥 Meeting</option>
+              <option value="learning">📚 Learning</option>
+              <option value="refactoring">🔧 Refactoring</option>
+              <option value="deployment">☁️ Deployment</option>
+              <option value="code-review">📝 Code Review</option>
+              <option value="planning">📅 Planning</option>
+              <option value="miscellaneous">❓ Miscellaneous</option>
+            </select>
+          </div>
+
+          <!-- create a new button that is going to handle the TODO submission -->
+          <button class="form-submit-button" type="sumbit">
+            <!-- "text" inside the submit button -->
+            Add TODO
+            <i class="material-icons">check</i>
+          </button>
+        </form>
+      </section>
+
+      <!-- section of the form that is going to be displaying our TODOs -->
+      <section class="todo-form-section">
+        <h3>TODO List</h3>
+
+        <!-- container for the list of todos -->
+        <div id="todo-list"></div>
+      </section>
+    </main>
+
+    <!-- links the following javascript file to the HTML page -->
+    <script src="welcome.js"></script>
+    <script src="toggleTheme.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
