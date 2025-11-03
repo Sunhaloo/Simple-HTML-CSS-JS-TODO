@@ -237,6 +237,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  cursor: default;
 }
 
 /* styling for the 'Toggle Theme' button */
@@ -255,12 +256,14 @@ button {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* WARNING: testing */
+/* add an infinite, always on RGB cycle to the user's name */
 #username {
   /* define the intial colour of the text logo */
   color: hsl(var(--hue), 100%, 75%);
   /* the actual animation that will cycle infinitely */
   animation: rgb-cycle 2s linear infinite;
+  /* change the font weight to be a little more bold */
+  font-weight: 700;
 }
 
 /* style the section for the creation of the TODO */
