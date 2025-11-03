@@ -1,40 +1,34 @@
----
-id: TODO Application - Pure HTML, CSS and JS
-aliases: Building A Simple TODO Application in Pure HTML, CSS and JS
-tags:
-  - CSS
-  - HTML
-  - JS
-  - basics
-  - objects
-author: S.Sunhaloo
-date: 2025-10-28
-status: Completed
----
+# My Learning Experience
 
 ## List of Contents
 
-- [[#Display Random Greetings]]
-- [[#Get The Current Date]]
-- [[#Write A TODO]]
-- [[#Displaying The TODO]]
-- [[#Styling]]
-	- [[#Implementation Of The Toggle Theme Button]]
-	- [[#CSS Syntax]]
-- [[#The Actual Main Javascript]]
-	- [[#Display, Username And TODO Item Code]]
-	- [[#The Display Function]]
+- Display Random Greetings
+- Get The Current Date
+- Write A TODO
+- Displaying The TODO
+- Styling
+  - Implementation Of The Toggle Theme Button
+  - CSS Syntax
+- The Actual Main Javascript
+  - Display, Username And TODO Item Code
+  - The Display Function
 
 ---
 
->[!INFO] Resource(s)
->- This file is going to referring to the note / file called '[[Javascript - Document Object Model ( DOM )]]'
->- https://www.youtube.com/watch?v=6eFwtaZf6zc
->- https://www.youtube.com/watch?v=SeKQSQDUMDQ
+> [!WARNING]
+> For the styling, don't focus on it too much as I told [Qwen Code](https://github.com/QwenLM/qwen-code) to do it for me.
+>
+> This is due to the fact, that I don't really have a taste and don't know the proper _properties_ and _syntax_ for 'CSS'.
+
+> [!INFO] Resource(s)
+>
+> - This file is going to referring to the note / file called '[[Javascript - Document Object Model ( DOM )]]'
+> - <https://www.youtube.com/watch?v=6eFwtaZf6zc>
+> - <https://www.youtube.com/watch?v=SeKQSQDUMDQ>
 
 # Display Random Greetings
 
-I wanted to implement this Python code into my HTML page so that it displays **different** greetings *randomly*.
+I wanted to implement this Python code into my HTML page so that it displays **different** greetings _randomly_.
 
 - This is the Python code that I was talking about:
 
@@ -69,16 +63,16 @@ Hence, the above code is going to:
 
 1. Get a random **index** using the `Math.random()` function
 2. Get the `<span>` tag / element into a Javascript object
-3. Display the *random* greeting using the `.innerHTML` method
+3. Display the _random_ greeting using the `.innerHTML` method
 
 # Get The Current Date
 
 Well as the title suggests, we are going to try to get the current date in this format `dd mm yyyy`.
 
-- This is how the `index.html` file looks like for *this* implementation:
+- This is how the `index.html` file looks like for _this_ implementation:
 
 ```html
-        <h4><span id="current-date" class="date-heading"></span></h4>
+<h4><span id="current-date" class="date-heading"></span></h4>
 ```
 
 - This is the code that is going to display the current date in a specific format:
@@ -110,129 +104,126 @@ The above code is going to work like this:
 1. Create a new `currentDate` **object** from `new Date()`
 2. Change the data **object** to a **string** so that we can apply the `split` function on it
 3. Display on only the day number, month and year number
-4. Use the `.onload` function to be able to display the *whole* function to the 'HTML' page
+4. Use the `.onload` function to be able to display the _whole_ function to the 'HTML' page
 
 # Write A TODO
 
 I am going to show you the whole `<section>` that is going to be used for adding 'TODO'.
 
 ```html
-      <section class="create-todo-section">
-        <h3>Create A TODO</h3>
+<section class="create-todo-section">
+  <h3>Create A TODO</h3>
 
-        <!-- our main `form` that is going to handle the user input for TODO -->
-        <form class="new-todo-form">
-          <h4>What Do You Want To Add?</h4>
+  <!-- our main `form` that is going to handle the user input for TODO -->
+  <form class="new-todo-form">
+    <h4>What Do You Want To Add?</h4>
 
-          <!-- the actual input bar that the user is going to write TODOs -->
-          <input
-            id="input-todo"
-            type="type"
-            name="todo-content"
-            placeholder="Implement AI in workflow"
-          />
+    <!-- the actual input bar that the user is going to write TODOs -->
+    <input
+      id="input-todo"
+      type="type"
+      name="todo-content"
+      placeholder="Implement AI in workflow"
+    />
 
-          <h4>TODO Category</h4>
+    <h4>TODO Category</h4>
 
-          <!-- use the drop down menu to select TODO category -->
-          <div class="category-options">
-            <select class="drop-down-category" name="category" required>
-              <!-- this value is already selected by default -->
-              <option value="miscellaneous" selected hidden>
-                ❓ Miscellaneous
-              </option>
+    <!-- use the drop down menu to select TODO category -->
+    <div class="category-options">
+      <select class="drop-down-category" name="category" required>
+        <!-- this value is already selected by default -->
+        <option value="miscellaneous" selected hidden>❓ Miscellaneous</option>
 
-              <!-- these are the selectables category -->
-              <option value="coding">💻 Coding</option>
-              <option value="debugging">🐛 Debugging</option>
-              <option value="testing">✅ Testing</option>
-              <option value="documentation">📄 Documentation</option>
-              <option value="meeting">👥 Meeting</option>
-              <option value="learning">📚 Learning</option>
-              <option value="refactoring">🔧 Refactoring</option>
-              <option value="deployment">☁️ Deployment</option>
-              <option value="code-review">📝 Code Review</option>
-              <option value="planning">📅 Planning</option>
-              <option value="miscellaneous">❓Miscellaneous</option>
+        <!-- these are the selectables category -->
+        <option value="coding">💻 Coding</option>
+        <option value="debugging">🐛 Debugging</option>
+        <option value="testing">✅ Testing</option>
+        <option value="documentation">📄 Documentation</option>
+        <option value="meeting">👥 Meeting</option>
+        <option value="learning">📚 Learning</option>
+        <option value="refactoring">🔧 Refactoring</option>
+        <option value="deployment">☁️ Deployment</option>
+        <option value="code-review">📝 Code Review</option>
+        <option value="planning">📅 Planning</option>
+        <option value="miscellaneous">❓Miscellaneous</option>
+      </select>
+    </div>
 
-            </select>
-          </div>
-
-          <!-- create a new button that is going to handle the TODO submission -->
-          <button class="form-submit-button" type="sumbit">
-            Add TODO
-            <i class="material-icons">check</i>
-          </button>
-        </form>
-      </section>
+    <!-- create a new button that is going to handle the TODO submission -->
+    <button class="form-submit-button" type="sumbit">
+      Add TODO
+      <i class="material-icons">check</i>
+    </button>
+  </form>
+</section>
 ```
 
 This is how the `<form>` is structured:
 
 - The `<input>` tag is going to allow the user to enter a 'TODO' that the user has to do
-	- The user is **not** going to be able to submit until he / she write something
-	- **NOTE**: This is going to be implemented inside the `script.js` file!
-- The user is then going to be able to select from the *drop down* menu; a list of **different** categories that is available.
-	- By default, the category is set to '*Miscellaneous*'
-	- Therefore, the user is going to have to set another category manually if 'TODO' being added does **not** match '*Miscellaneous*'
-- Finally, the user is going to able to **press** the *Submit Button* that is going to allow the TODO to be added
+  - The user is **not** going to be able to submit until he / she write something
+  - **NOTE**: This is going to be implemented inside the `script.js` file!
+- The user is then going to be able to select from the _drop down_ menu; a list of **different** categories that is available.
+  - By default, the category is set to '_Miscellaneous_'
+  - Therefore, the user is going to have to set another category manually if 'TODO' being added does **not** match '_Miscellaneous_'
+- Finally, the user is going to able to **press** the _Submit Button_ that is going to allow the TODO to be added
 
 # Displaying The TODO
 
-This is a **rudimentary** code that is going to display some *dumb* 'TODO'.
+This is a **rudimentary** code that is going to display some _dumb_ 'TODO'.
 
->[!WARNING]
->You should **not** really focus on this code below... This is going to be changed as we implement it *inside* the `script.js` file!
+> [!WARNING]
+> You should **not** really focus on this code below... This is going to be changed as we implement it _inside_ the `script.js` file!
 
 ```html
-      <!-- section of the form that is going to be displaying our TODOs -->
-      <section class="todo-form-section">
-        <h3>TODO List</h3>
+<!-- section of the form that is going to be displaying our TODOs -->
+<section class="todo-form-section">
+  <h3>TODO List</h3>
 
-        <!-- part of the section that is going to display the individual TODOs -->
-        <div class="list" id="todo-list">
-          <!-- an individual todo item -->
-          <div class="todo-item">
-            <label>
-              <input type="checkbox" />
-              <span class="bubble business"></span>
-            </label>
-          </div>
+  <!-- part of the section that is going to display the individual TODOs -->
+  <div class="list" id="todo-list">
+    <!-- an individual todo item -->
+    <div class="todo-item">
+      <label>
+        <input type="checkbox" />
+        <span class="bubble business"></span>
+      </label>
+    </div>
 
-          <!-- the content for the individual todo -->
-          <div class="todo-content">
-            <input type="text" value="Todo Item 1" readonly />
-          </div>
+    <!-- the content for the individual todo -->
+    <div class="todo-content">
+      <input type="text" value="Todo Item 1" readonly />
+    </div>
 
-          <!-- the actions buttons that are going to be associated with each TODO -->
-          <div class="todo-action">
-            <button class="todo-edit-button">Edit</button>
-            <button class="todo-delete-button">Delete</button>
-          </div>
-        </div>
+    <!-- the actions buttons that are going to be associated with each TODO -->
+    <div class="todo-action">
+      <button class="todo-edit-button">Edit</button>
+      <button class="todo-delete-button">Delete</button>
+    </div>
+  </div>
 
-        <!-- part of the section that is going to display the individual TODOs -->
-        <div class="list" id="todo-list">
-          <!-- an individual todo item -->
-          <div class="todo-item">
-            <label>
-              <input type="checkbox" />
-              <span class="bubble business"></span>
-            </label>
-          </div>
+  <!-- part of the section that is going to display the individual TODOs -->
+  <div class="list" id="todo-list">
+    <!-- an individual todo item -->
+    <div class="todo-item">
+      <label>
+        <input type="checkbox" />
+        <span class="bubble business"></span>
+      </label>
+    </div>
 
-          <!-- the content for the individual todo -->
-          <div class="todo-content">
-            <input type="text" value="Todo Item 2" readonly />
-          </div>
+    <!-- the content for the individual todo -->
+    <div class="todo-content">
+      <input type="text" value="Todo Item 2" readonly />
+    </div>
 
-          <!-- the actions buttons that are going to be associated with each TODO -->
-          <div class="todo-action">
-            <button class="todo-edit-button">Edit</button>
-            <button class="todo-delete-button">Delete</button>
-          </div>
-        </div>
-      </section>
+    <!-- the actions buttons that are going to be associated with each TODO -->
+    <div class="todo-action">
+      <button class="todo-edit-button">Edit</button>
+      <button class="todo-delete-button">Delete</button>
+    </div>
+  </div>
+</section>
 ```
 
 ## The Actual TODO Display Section
@@ -240,28 +231,28 @@ This is a **rudimentary** code that is going to display some *dumb* 'TODO'.
 This is how the actual 'TODO' display section is going to look like, in terms of code **after** we have written the `displayTodos` function inn our `main.js` file.
 
 ```html
-      <!-- section of the form that is going to be displaying our TODOs -->
-      <section class="todo-form-section">
-        <h3>TODO List</h3>
+<!-- section of the form that is going to be displaying our TODOs -->
+<section class="todo-form-section">
+  <h3>TODO List</h3>
 
-        <!-- container for the list of todos -->
-        <div id="todo-list"></div>
-      </section>
+  <!-- container for the list of todos -->
+  <div id="todo-list"></div>
+</section>
 ```
 
->[!NOTE]
-><p align="center">Why is that like this?</p>
+> [!NOTE]
 >
->You are going to see that in our `main.js` file when we go to explain it later on... You will see a function like `document.createElement`... What this will actually is create an "*HTML tag*" that we need / want to into our 'HTML' page!
+> <p align="center">Why is that like this?</p>
 >
->>I did **not** know that we could do something like that!
+> You are going to see that in our `main.js` file when we go to explain it later on... You will see a function like `document.createElement`... What this will actually is create an "_HTML tag_" that we need / want to into our 'HTML' page!
 >
+> > I did **not** know that we could do something like that!
 
 # Styling
 
-Given that you know from [[Javascript - Document Object Model ( DOM )#Example Code - Dark / Light Mode Button With Local Storage | Javascript - Document Object Model]] code example, that to be able to actually switch the colours; you have to have *two* separate colourschemes.
+Given that you know from [[Javascript - Document Object Model ( DOM )#Example Code - Dark / Light Mode Button With Local Storage | Javascript - Document Object Model]] code example, that to be able to actually switch the colours; you have to have _two_ separate colourschemes.
 
->Makes sense, one for 'Dark' mode and one for 'Light' mode!
+> Makes sense, one for 'Dark' mode and one for 'Light' mode!
 
 In the above example code, we were doing it like so:
 
@@ -283,11 +274,11 @@ body.dark-mode {
 
 As you can see, we have a styling for when the user is in 'Light' mode and another one for when the user is in 'Dark' mode.
 
-But given that in our case, we have something more "*complex*" here.
+But given that in our case, we have something more "_complex_" here.
 
->There are more elements and tags on the page!
+> There are more elements and tags on the page!
 
-Therefore, doing using the above way is going to be a *pain in the ass*. This is where the `:root` comes into play!
+Therefore, doing using the above way is going to be a _pain in the ass_. This is where the `:root` comes into play!
 
 ```css
 /* colours for the light theme */
@@ -355,43 +346,45 @@ body {
 }
 ```
 
-Due to the way that I implemented the 'Toggle Theme' function; The above CSS, is going to use the colours of the '*Light*' mode and when / if the user decides to switch to the '*Dark*' mode. Then the colours from the `:root.dark-mode {}` are going to be **automatically** sourced.
+Due to the way that I implemented the 'Toggle Theme' function; The above CSS, is going to use the colours of the '_Light_' mode and when / if the user decides to switch to the '_Dark_' mode. Then the colours from the `:root.dark-mode {}` are going to be **automatically** sourced.
 
->[!INFO]
->Given that we are already taking about the 'Toggle Theme' button; I am going to show you, how I implemented the it, right here, right now!
+> [!INFO]
+> Given that we are already taking about the 'Toggle Theme' button; I am going to show you, how I implemented the it, right here, right now!
 
->[!TIP]
->Additionally, if you want to still style something that is "*found*" inside the 'Dark' mode; then you could totally do something like this to be able to achieve the styling that you want to.
+> [!TIP]
+> Additionally, if you want to still style something that is "_found_" inside the 'Dark' mode; then you could totally do something like this to be able to achieve the styling that you want to.
 >
->- The code found below is *styling* the 'Toggle Theme' button when **dark mode** is applied:
+> - The code found below is _styling_ the 'Toggle Theme' button when **dark mode** is applied:
 >
->```css
->/* style the toggle theme button when in dark mode specifically */
->:root.dark-mode .theme-toggle-button {
->  /* change the background colour */
->  background-color: var(--dark-grey);
->  /* change the text colour */
->  color: var(--foreground);
->}
->```
+> ```css
+> /* style the toggle theme button when in dark mode specifically */
+> :root.dark-mode .theme-toggle-button {
+>   /* change the background colour */
+>   background-color: var(--dark-grey);
+>   /* change the text colour */
+>   color: var(--foreground);
+> }
+> ```
 
 ## Implementation Of The Toggle Theme Button
 
->I am going to break down the code little by little instead of showing me, myself and I the full thing!
+> I am going to break down the code little by little instead of showing me, myself and I the full thing!
 
 ```js
 // get the button that is going to change the theme
 let themeToggleButtonElement = document.getElementById("theme-button");
 
 // get the "material" icons that of the theme button
-let themeToggleIconElement = document.querySelector(".material-symbols-outlined");
+let themeToggleIconElement = document.querySelector(
+  ".material-symbols-outlined",
+);
 
 // get the `theme` key from the local storage
 let systemTheme = localStorage.getItem("theme");
 ```
 
 - Get the 'HTML' elements from the `index.html` page and make them a Javascript object
-- Get the `theme` *key's* value from the `localStorage`
+- Get the `theme` _key's_ value from the `localStorage`
 
 ```js
 // set the default key-value pair for `theme` key if not already set
@@ -423,11 +416,11 @@ if (systemTheme === "dark") {
 ```
 
 - The above code checks if the `theme` key does exists or not inside the `localStorage`
-	- If the `theme` key does not have a value ==> set it to `Light` theme by default
+  - If the `theme` key does not have a value ==> set it to `Light` theme by default
 - If the `theme` key has a **value** of `"dark"`
-	- Switch all the element to use the `dark-mode` *style* variant from our `style.css`
+  - Switch all the element to use the `dark-mode` _style_ variant from our `style.css`
 - If the `theme` key has a **value** of `"light"`
-	- Simply remove the `dark-mode` colorscheme applied on the 'HTML' elements
+  - Simply remove the `dark-mode` colorscheme applied on the 'HTML' elements
 
 ```js
 // add the "click" implementation for the button
@@ -449,14 +442,14 @@ themeToggleButtonElement.addEventListener("click", () => {
 ```
 
 - The actual implementation of the 'Toggle Theme' button
-- When the user *toggles* the button
-	- The whole page and the button is going to switch to `dark-mode`
-	- Check if the current theme is set to the 'Dark' variant
-		- Switch the icon to dark variant
-		- Update the `theme` key to `dark`
-	- Else if the current theme is set to 'Light' variant
-		- Switch the icon to light variant
-		- Update the `theme` key to `light`
+- When the user _toggles_ the button
+  - The whole page and the button is going to switch to `dark-mode`
+  - Check if the current theme is set to the 'Dark' variant
+    - Switch the icon to dark variant
+    - Update the `theme` key to `dark`
+  - Else if the current theme is set to 'Light' variant
+    - Switch the icon to light variant
+    - Update the `theme` key to `light`
 
 ## CSS Syntax
 
@@ -472,36 +465,37 @@ input:checked ~ .bubble-business {
 }
 ```
 
->[!INFO] What is that `~` syntax?
+> [!INFO] What is that `~` syntax?
 >
->>[!INFO] Resource(s)
->>- https://www.w3schools.com/Css/css_combinators.asp
+> > [!INFO] Resource(s)
+> >
+> > - <https://www.w3schools.com/Css/css_combinators.asp>
 >
->The `~` is part of the '**General Sibling Combinator**' and it defines a *relationship* between two or more "*selectors*".
+> The `~` is part of the '**General Sibling Combinator**' and it defines a _relationship_ between two or more "_selectors_".
 >
->The actual `~` is called a '**Subsequent Sibling Combinator**'.
+> The actual `~` is called a '**Subsequent Sibling Combinator**'.
 >
->The *syntax* is going to select all the *siblings* of a **single** *parent*!
+> The _syntax_ is going to select all the _siblings_ of a **single** _parent_!
 >
->In our *development* code above; you are going to see something like this:
+> In our _development_ code above; you are going to see something like this:
 >
->```html
->          <!-- an individual todo item -->
->          <div class="todo-item">
->            <label>
->              <input type="checkbox" />
->              <span class="bubble business"></span>
->            </label>
->          </div>
->```
+> ```html
+> <!-- an individual todo item -->
+> <div class="todo-item">
+>   <label>
+>     <input type="checkbox" />
+>     <span class="bubble business"></span>
+>   </label>
+> </div>
+> ```
 >
->As you can clearly see, we have `<input>` and also the `<span>` tag under the same `<label>` ( *and `<div>`* )
+> As you can clearly see, we have `<input>` and also the `<span>` tag under the same `<label>` ( _and `<div>`_ )
 >
->Therefore, the above syntax is going to select both of them and apply the corresponding settings.
+> Therefore, the above syntax is going to select both of them and apply the corresponding settings.
 
-- In this case, when the `<input>` is "*checked*"
-	- Select the `<span>`'s *checkbox* ( *our custom checkbox* )
-	- Therefore, simply apply the *styling* to **both** of them
+- In this case, when the `<input>` is "_checked_"
+  - Select the `<span>`'s _checkbox_ ( _our custom checkbox_ )
+  - Therefore, simply apply the _styling_ to **both** of them
 
 # The Actual Main Javascript
 
@@ -514,13 +508,13 @@ I am now going to talk about the `main.js` file and how we are actually able to:
 
 ## Display, Username And TODO Item Code
 
->[!NOTE]
->I am going to look at this very code **before** I show me, myself and I look at the `displayTodos` function!
+> [!NOTE]
+> I am going to look at this very code **before** I show me, myself and I look at the `displayTodos` function!
 
 The code that we are going to look at is going to do three main things:
 
-1. Initialises the whole page and also *calls* the `displayTodos` function to **show** the 'TODO' items
-2. Allow the user enter a 'TODO' item and *connect* a category to it
+1. Initialises the whole page and also _calls_ the `displayTodos` function to **show** the 'TODO' items
+2. Allow the user enter a 'TODO' item and _connect_ a category to it
 3. Store the 'TODO' item added to the `localStorage`
 
 ```js
@@ -589,61 +583,61 @@ window.addEventListener("load", () => {
 });
 ```
 
-- The `load` event is... As the *word* suggests, its going to be *sourced* / "*activated*" when the page is **loaded**
-- Check if there is a change on the page; Then use the *event system* to:
-	- Store the changed **username** into the `localStorage`
+- The `load` event is... As the _word_ suggests, its going to be _sourced_ / "_activated_" when the page is **loaded**
+- Check if there is a change on the page; Then use the _event system_ to:
+  - Store the changed **username** into the `localStorage`
 
 ```js
-  // check for any submission of TODOs
-  newTodoForm.addEventListener("submit", (e) => {
-    // stop the browser from executing its default action
-    e.preventDefault();
+// check for any submission of TODOs
+newTodoForm.addEventListener("submit", (e) => {
+  // stop the browser from executing its default action
+  e.preventDefault();
 
-    // get the content from the input field
-    const content = e.target.elements.content.value;
+  // get the content from the input field
+  const content = e.target.elements.content.value;
 
-    // if the content is empty or just whitespace, prevent adding the todo
-    if (!content.trim()) {
-      return;
-    }
+  // if the content is empty or just whitespace, prevent adding the todo
+  if (!content.trim()) {
+    return;
+  }
 
-    // create a `todo` object
-    const todo = {
-      // use the variable `content` from above to save the actual content user entered
-      content,
-      // use the variable name `category` to save the category selected for each TODO item
-      category: e.target.elements.category.value,
-      // new TODO item created ==> not done yet
-      done: false,
-      // specify the current time at which the TODO item was created
-      createdAt: new Date().getTime(),
-    };
+  // create a `todo` object
+  const todo = {
+    // use the variable `content` from above to save the actual content user entered
+    content,
+    // use the variable name `category` to save the category selected for each TODO item
+    category: e.target.elements.category.value,
+    // new TODO item created ==> not done yet
+    done: false,
+    // specify the current time at which the TODO item was created
+    createdAt: new Date().getTime(),
+  };
 
-    // add new todo to the global array `todos`
-    todos.push(todo);
+  // add new todo to the global array `todos`
+  todos.push(todo);
 
-    // save the new TODO item created to the local storage
-    // use `JSON.stringify()` to convert the JS object to "JSON" string
-    localStorage.setItem("todos", JSON.stringify(todos));
+  // save the new TODO item created to the local storage
+  // use `JSON.stringify()` to convert the JS object to "JSON" string
+  localStorage.setItem("todos", JSON.stringify(todos));
 
-    // reset the TODO input and categories
-    e.target.reset();
+  // reset the TODO input and categories
+  e.target.reset();
 
-    // call the display function after creation of TODO item
-    displayTodos();
-  });
+  // call the display function after creation of TODO item
+  displayTodos();
+});
 ```
 
 The **part** of the code is responsible to allow us to enter the 'TODO' item and submit it to the `localStorage`.
 
 - The `e.preventDefault()` is a function that will allow the browser to **stop** executing its normal behaviour
-- If the `content` / 'TODO' item **cannot** be *trimmed*
-	- This means that we **don't** have anything written in the 'TODO' `<input>`
-	- This allows for the *category* to **not** be sent alone
-- When we have *content* inside the `<input>` for the 'TODO' item
-	- Then we add that to the `todos` *global* array
-	- Convert that *array* / *object* into its 'JSON' format
-	- So that it can be saved to the `localStorage`
+- If the `content` / 'TODO' item **cannot** be _trimmed_
+  - This means that we **don't** have anything written in the 'TODO' `<input>`
+  - This allows for the _category_ to **not** be sent alone
+- When we have _content_ inside the `<input>` for the 'TODO' item
+  - Then we add that to the `todos` _global_ array
+  - Convert that _array_ / _object_ into its 'JSON' format
+  - So that it can be saved to the `localStorage`
 - Reset the `<input>` and `<select>` elements with `e.target.reset()`
 
 ## The Display Function
@@ -870,112 +864,112 @@ function displayTodos() {
     todoList.appendChild(todoItem);
 ```
 
-The code above is going to iterate through the *global* `todos` variable and get each 'TODO' item so that it can be displayed inside the `<div>` element with and `id` of `todo-list`.
+The code above is going to iterate through the _global_ `todos` variable and get each 'TODO' item so that it can be displayed inside the `<div>` element with and `id` of `todo-list`.
 
 The code is going to create each to the 'HTML' elements like `<input>`, `<span>`, `<button>` and more!
 
 ### Checking For Completed TODO Item
 
 ```js
-    // check if the TODO item has been checked off
-    if (todo.done) {
-      // add the styling of the todo item using the class 'done'
-      todoItem.classList.add("done");
-    }
+// check if the TODO item has been checked off
+if (todo.done) {
+  // add the styling of the todo item using the class 'done'
+  todoItem.classList.add("done");
+}
 
-    // check if the TODO item has been checked or not
-    input.addEventListener("click", (e) => {
-      // checked if the TODO item has been checked off
-      todo.done = e.target.checked;
+// check if the TODO item has been checked or not
+input.addEventListener("click", (e) => {
+  // checked if the TODO item has been checked off
+  todo.done = e.target.checked;
 
-      // update the JSON data found inside the local storage
-      localStorage.setItem("todos", JSON.stringify(todos));
+  // update the JSON data found inside the local storage
+  localStorage.setItem("todos", JSON.stringify(todos));
 
-      // check if the condition is the TODO item has been checked
-      if (todo.done) {
-        // if TODO item has actually been checked ==> apply the styling
-        todoItem.classList.add("done");
+  // check if the condition is the TODO item has been checked
+  if (todo.done) {
+    // if TODO item has actually been checked ==> apply the styling
+    todoItem.classList.add("done");
 
-        // but if the TODO item has not been checked off
-      } else {
-        // if TODO item has NOT been checked ==> remove the styling
-        todoItem.classList.remove("done");
-      }
-    });
+    // but if the TODO item has not been checked off
+  } else {
+    // if TODO item has NOT been checked ==> remove the styling
+    todoItem.classList.remove("done");
+  }
+});
 ```
 
 The above code is going to add the correct styling options from the `style.css` file for when the `<input>` has been checked-off!
 
 If there has been a `'click'` event on the checkbox associated with the `<input>` tag. Hence, updated the `localStorage`.
 
->[!NOTE]
->Given that this is a *toggleable* thing, we have to have conditions for when it checked-off and **not** checked-off.
+> [!NOTE]
+> Given that this is a _toggleable_ thing, we have to have conditions for when it checked-off and **not** checked-off.
 >
->That is the reason as to why we have that `if` statement.
+> That is the reason as to why we have that `if` statement.
 
 ### Implementation Of The Edit Button
 
 ```js
-    // implement the 'Edit' button
-    editButton.addEventListener("click", (e) => {
-      // get the content of the TODO item
-      const input = content.querySelector("input");
+// implement the 'Edit' button
+editButton.addEventListener("click", (e) => {
+  // get the content of the TODO item
+  const input = content.querySelector("input");
 
-      // remove the `readonly` attribute from the `<input>` taga completely
-      input.removeAttribute("readonly");
+  // remove the `readonly` attribute from the `<input>` taga completely
+  input.removeAttribute("readonly");
 
-      // set the input element to be active to be able to receive changes
-      input.focus();
+  // set the input element to be active to be able to receive changes
+  input.focus();
 
-      // check if the user clicks somewhere else when editing TODO item
-      input.addEventListener("blur", (e) => {
-        // re-apply the `readonly` attribute to the `<input>` tag
-        input.setAttribute("readonly", true);
+  // check if the user clicks somewhere else when editing TODO item
+  input.addEventListener("blur", (e) => {
+    // re-apply the `readonly` attribute to the `<input>` tag
+    input.setAttribute("readonly", true);
 
-        // update the todo item's content
-        todo.content = input.value;
+    // update the todo item's content
+    todo.content = input.value;
 
-        // if change did occur ==> update the local storage
-        localStorage.setItem("todos", JSON.stringify(todos));
+    // if change did occur ==> update the local storage
+    localStorage.setItem("todos", JSON.stringify(todos));
 
-        // refresh - display the update on the page
-        displayTodos();
-      });
-    });
+    // refresh - display the update on the page
+    displayTodos();
+  });
+});
 ```
 
 - Check if the 'Edit' button has been clicked
-	- Remove the `readonly` attribute applied to the `<input>` tag *normally*
-	- Use the `input.focus()` to set the *focus* to the `<input>` on the 'TODO' item
+  - Remove the `readonly` attribute applied to the `<input>` tag _normally_
+  - Use the `input.focus()` to set the _focus_ to the `<input>` on the 'TODO' item
 - When the use has finished editing the 'TODO' item
-	- He just need to click somewhere else and the `'blur'` event listener is going to take into action
-		- Its going to re-add the `readonly` property to the the `<input>` tag so it **cannot** be changed
-		- Update the *value* changed to the `localStorage`'s `todos` array
-- Finally call the `displayTodos` function to *refresh* the page
+  - He just need to click somewhere else and the `'blur'` event listener is going to take into action
+    - Its going to re-add the `readonly` property to the the `<input>` tag so it **cannot** be changed
+    - Update the _value_ changed to the `localStorage`'s `todos` array
+- Finally call the `displayTodos` function to _refresh_ the page
 
 ### Implementation Of The Delete Button
 
 ```js
-    // implement the 'Delete' button
-    deleteButton.addEventListener("click", (e) => {
-      // the actual code that is going to allow us to remove the TODO item
-      todos = todos.filter((t) => t != todo);
+// implement the 'Delete' button
+deleteButton.addEventListener("click", (e) => {
+  // the actual code that is going to allow us to remove the TODO item
+  todos = todos.filter((t) => t != todo);
 
-      // update the local storage
-      localStorage.setItem("todos", JSON.stringify(todos));
+  // update the local storage
+  localStorage.setItem("todos", JSON.stringify(todos));
 
-      // refresh - display the update on the page
-      displayTodos();
-    });
+  // refresh - display the update on the page
+  displayTodos();
+});
 ```
 
 The above code is pretty simple as it going to:
 
 - Listen when the 'Delete' button has been clicked
 - The line of code `todos = todos.filter((t) => t != todo);` is going to:
-	- Find the specific 'TODO' item that the 'Delete' button has just been pressed
-	- Create a new `todos` list whereby the 'TODO' item to be *removed* is **not** present
-	- Return the new, updated `todos` global array
+  - Find the specific 'TODO' item that the 'Delete' button has just been pressed
+  - Create a new `todos` list whereby the 'TODO' item to be _removed_ is **not** present
+  - Return the new, updated `todos` global array
 - Save that new `todos` array to the `localStorage`
 - Finally refresh the page to show the changes made
 
@@ -983,11 +977,12 @@ The above code is pretty simple as it going to:
 
 # Socials
 
-- **Instagram**: https://www.instagram.com/s.sunhaloo
-- **YouTube**: https://www.youtube.com/@s.sunhaloo
-- **GitHub**: https://www.github.com/Sunhaloo
+- **Instagram**: <https://www.instagram.com/s.sunhaloo>
+- **YouTube**: <https://www.youtube.com/@s.sunhaloo>
+- **GitHub**: <https://www.github.com/Sunhaloo>
 
 ---
 
 S.Sunhaloo
 Thank You!
+

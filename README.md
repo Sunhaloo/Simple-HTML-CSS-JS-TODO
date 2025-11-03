@@ -24,8 +24,7 @@ Simple TODO Application written in 'HTML', 'CSS' and Javascript.
 
 Upon entering the web page, you are going to be greeted with this page:
 
-> [!BUG]
-> Insert image of webpage here
+![light themes](./screenshots/light-mode.png)
 
 Therefore, the user is going to be able to:
 
@@ -37,8 +36,13 @@ Therefore, the user is going to be able to:
 6. The user is able to edit the content of the TODO item created
 7. The user is able to delete the TODO item entirely
 
+---
+
 ## Some Screenshots
 
 - Light Mode:
 
+![light themes](./screenshots/light-mode.png)
+
 - Dark Mode:
+  ![light themes](./screenshots/dark-mode.png)

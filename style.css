@@ -3,7 +3,7 @@
  * Modern, clean design with improved visual hierarchy
  */
 
-/* Color variables for light theme */
+/* light theme colourscheme */
 :root {
   --background: #f8f9fa;
   --foreground: #212529;
@@ -25,10 +25,8 @@
   --dark-magenta: #5a32a3;
   --cyan: #17a2b8;
   --dark-cyan: #117a8b;
-  --white: #ffffff; /* Updated to pure white for better aesthetics */
+  --white: #ffffff;
   --dark-white: #f8f9fa;
-
-  /* Additional aesthetic variables */
   --primary: #4361ee;
   --secondary: #3f37c9;
   --accent: #4cc9f0;
@@ -39,7 +37,7 @@
   --transition: all 0.3s ease;
 }
 
-/* Color variables for dark theme */
+/* light theme colourscheme */
 :root.dark-mode {
   --background: #121212;
   --foreground: #e9ecef;
@@ -63,8 +61,6 @@
   --dark-cyan: #4bb5d7;
   --white: #1e1e1e;
   --dark-white: #2d2d2d;
-
-  /* Dark theme aesthetic variables */
   --primary: #4895ef;
   --secondary: #4361ee;
   --accent: #4cc9f0;
@@ -73,7 +69,7 @@
   --card-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Reset and base styles */
+/* styling for the all the properties */
 * {
   margin: 0;
   padding: 0;
@@ -90,7 +86,7 @@
     sans-serif;
 }
 
-/* Body styling */
+/* style the body tag */
 body {
   background-color: var(--background);
   color: var(--foreground);
@@ -99,12 +95,12 @@ body {
   min-height: 100vh;
 }
 
-/* Section styling with improved spacing */
+/* style the all the sectionn elements */
 section {
   padding: 2rem 1.5rem;
 }
 
-/* Header section styling */
+/* style the header section */
 header {
   text-align: center;
   padding: 0.2rem;
@@ -113,7 +109,7 @@ header {
   color: white;
 }
 
-/* Heading styles */
+/* style all the heading found on the page */
 h1 {
   font-size: 2.2rem;
   font-weight: 700;
@@ -142,7 +138,7 @@ h4 {
   margin-bottom: 0.5rem;
 }
 
-/* Input and button base styles */
+/* style the input and button element ( responsible for handling insertion of TODO items ) */
 input:not([type="checkbox"]),
 button {
   appearance: none;
@@ -155,7 +151,7 @@ button {
   color: var(--foreground);
 }
 
-/* Navigation bar styling */
+/* style our navigation bar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -165,7 +161,7 @@ button {
   border-bottom: 1px solid var(--selection-background);
 }
 
-/* Navbar elements */
+/* style of elements found inside the navigation bar */
 .text-logo,
 .theme-toggle-button {
   padding: 0.6rem 1.2rem;
@@ -178,7 +174,7 @@ button {
   gap: 8px;
 }
 
-/* Theme toggle button styling */
+/* styling for the 'Toggle Theme' button */
 .theme-toggle-button {
   background-color: var(--primary);
   color: white;
@@ -194,7 +190,7 @@ button {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Material icons styling */
+/* style the 'Material' icons provided by Google */
 .material-icons,
 .material-symbols-outlined {
   vertical-align: middle;
@@ -210,7 +206,7 @@ button {
     "opsz" 24;
 }
 
-/* Create todo section styling */
+/* style the section for the creation of the TODO */
 .create-todo-section {
   display: flex;
   flex-direction: column;
@@ -222,7 +218,7 @@ button {
   box-shadow: var(--card-shadow);
 }
 
-/* Todo input styling */
+/* style the input element for the creation of TODO */
 .create-todo-section input[type="text"] {
   display: block;
   width: 100%;
@@ -240,7 +236,7 @@ button {
   box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
 }
 
-/* Category options styling */
+/* style the categories / select element */
 .create-todo-section .category-options {
   display: flex;
   flex-direction: column;
@@ -248,7 +244,7 @@ button {
   width: 100%;
 }
 
-/* Select dropdown styling */
+/* style the actual select element */
 .create-todo-section select {
   box-sizing: border-box;
   width: 100%;
@@ -268,7 +264,7 @@ button {
   box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
 }
 
-/* Add todo button styling */
+/* style the button responsible for adding TODO items */
 .form-submit-button {
   display: inline-flex;
   align-items: center;
@@ -297,17 +293,16 @@ button {
   transform: translateY(0);
 }
 
-/* Button icons */
 .form-submit-button i {
   font-size: 1.1rem;
 }
 
-/* Checkbox styling (hidden) */
+/* style the "custom" checkboxes */
 input[type="checkbox"] {
   display: none;
 }
 
-/* Custom checkbox styling */
+/* style the actual custom circle checkbox */
 .bubble-business {
   display: flex;
   align-items: center;
@@ -342,7 +337,7 @@ input:checked ~ .bubble-business::after {
   opacity: 1;
 }
 
-/* Todo list container */
+/* style the whole container that displays the TODO items */
 .todo-form-section #todo-list {
   display: flex;
   flex-direction: column;
@@ -350,7 +345,7 @@ input:checked ~ .bubble-business::after {
   padding: 0 1.5rem 1.5rem;
 }
 
-/* Individual todo item styling */
+/* style the individual items of the list */
 .todo-form-section .list {
   display: flex;
   align-items: center;
@@ -363,11 +358,14 @@ input:checked ~ .bubble-business::after {
   animation: fadeIn 0.3s ease-out;
 }
 
+/* custom animation called `fadeIn` */
 @keyframes fadeIn {
+  /* element starts out with '0' opacity */
   from {
     opacity: 0;
     transform: translateY(10px);
   }
+  /* then gradually shows itself */
   to {
     opacity: 1;
     transform: translateY(0);
@@ -379,7 +377,7 @@ input:checked ~ .bubble-business::after {
   transform: translateY(-2px);
 }
 
-/* Todo item label */
+/* the actual invididual item for the label */
 .todo-item label {
   display: flex;
   align-items: center;
@@ -388,13 +386,13 @@ input:checked ~ .bubble-business::after {
   flex: 1;
 }
 
-/* Todo content area */
+/* styling the contents found inside the TODO item */
 .todo-form-section .todo-content {
   flex: 1;
   min-width: 0; /* Allow flex item to shrink below content size */
 }
 
-/* Todo content input */
+/* style the "editing" part of the TODO item */
 .todo-form-section .todo-content input {
   width: 100%;
   padding: 0.5rem;
@@ -405,7 +403,7 @@ input:checked ~ .bubble-business::after {
   outline: none;
 }
 
-/* Category tag styling */
+/* style each of the category display in TODO item */
 .todo-category {
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
@@ -416,14 +414,13 @@ input:checked ~ .bubble-business::after {
   margin-left: 0.5rem;
 }
 
-/* Todo action buttons container */
 .todo-form-section .todo-action {
   display: flex;
   gap: 0.5rem;
   margin-left: auto;
 }
 
-/* Action buttons styling */
+/* style the button inside the TODO items */
 .todo-form-section .todo-action button {
   padding: 0.6rem 1rem;
   border-radius: 8px;
@@ -437,7 +434,7 @@ input:checked ~ .bubble-business::after {
   gap: 6px;
 }
 
-/* Edit button styling */
+/* style the 'Edit' button specifically */
 .todo-form-section .todo-action .todo-edit-button {
   background-color: var(--primary);
   color: white;
@@ -448,7 +445,7 @@ input:checked ~ .bubble-business::after {
   transform: translateY(-2px);
 }
 
-/* Delete button styling */
+/* style the 'Delete' button specifically */
 .todo-form-section .todo-action .todo-delete-button {
   background-color: var(--red);
   color: white;
@@ -459,7 +456,7 @@ input:checked ~ .bubble-business::after {
   transform: translateY(-2px);
 }
 
-/* Completed todo styling */
+/* style the button when the TODO item has been checked off */
 .todo-item input[type="checkbox"]:checked ~ .todo-content input {
   color: var(--dark-grey);
   text-decoration: line-through;
@@ -470,4 +467,3 @@ input:checked ~ .bubble-business::after {
   opacity: 0.85;
   background-color: var(--selection-background);
 }
-
