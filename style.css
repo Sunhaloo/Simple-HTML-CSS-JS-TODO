@@ -83,7 +83,7 @@
 
 /* style the whole HTML tag ==> make everything in the middle */
 html {
-  max-width: 50%;
+  max-width: 100%;
   margin: auto;
 }
 
@@ -92,7 +92,7 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   line-height: 1.6;
-  padding: 20px;
+  padding: 10px;
   min-height: 100vh;
 }
 
@@ -422,7 +422,7 @@ input:checked ~ .bubble-business::after {
 /* style the individual items of the list */
 .todo-form-section .list {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: 1rem;
   padding: 1rem;
   border-radius: var(--border-radius);
@@ -430,6 +430,9 @@ input:checked ~ .bubble-business::after {
   box-shadow: var(--card-shadow);
   transition: var(--transition);
   animation: fadeIn 0.3s ease-out;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .todo-form-section .list:hover {
@@ -449,7 +452,9 @@ input:checked ~ .bubble-business::after {
 /* styling the contents found inside the TODO item */
 .todo-form-section .todo-content {
   flex: 1;
-  min-width: 0; /* Allow flex item to shrink below content size */
+  min-width: 0;
+  flex-basis: 75%;
+  margin-bottom: 0.5rem;
 }
 
 /* style the "editing" part of the TODO item */
@@ -478,6 +483,9 @@ input:checked ~ .bubble-business::after {
   display: flex;
   gap: 0.5rem;
   margin-left: auto;
+  flex-basis: 100%;
+  justify-content: flex-end;
+  margin: 0;
 }
 
 /* style the button inside the TODO items */
@@ -526,4 +534,69 @@ input:checked ~ .bubble-business::after {
 .list.done {
   opacity: 0.85;
   background-color: var(--selection-background);
+}
+
+/* ------------- */
+/* Mobile Phones */
+/* ------------- */
+
+/* ------------- */
+/* Mobile Phones */
+/* ------------- */
+
+@media (max-width: 767px) {
+  .todo-form-section .list {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .todo-form-section .todo-content {
+    flex-basis: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .todo-form-section .todo-action {
+    flex-basis: 100%;
+    justify-content: flex-end;
+    margin-left: 0;
+  }
+}
+
+/* ---------------- */
+/* Desktop Monitors */
+
+/* ------------- */
+/* Mobile Phones */
+/* ------------- */
+
+@media (max-width: 767px) {
+  .todo-form-section .list {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .todo-form-section .todo-content {
+    flex-basis: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .todo-form-section .todo-action {
+    flex-basis: 100%;
+    justify-content: flex-end;
+    margin-left: 0;
+  }
+}
+
+/* ---------------- */
+
+/* change the width of the `html` page and padding of the `body` element */
+@media (min-width: 768px) {
+  html {
+    max-width: 50%;
+  }
+  body {
+    padding: 20px;
+  }
 }
