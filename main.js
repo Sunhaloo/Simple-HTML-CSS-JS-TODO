@@ -25,7 +25,8 @@ function displayTodos() {
     // create a new `span` HTML tag on the page to show TODO customised checkbox
     const span = document.createElement("span");
 
-    // create `div` tags for 'content', 'actions', 'edit', 'delete'
+    // create `div` tags for 'category', 'content', 'actions', 'edit', 'delete' const category = document.createElement("div");
+    const category = document.createElement("div");
     const content = document.createElement("div");
     const actions = document.createElement("div");
     const editButton = document.createElement("button");
@@ -50,6 +51,8 @@ function displayTodos() {
 
     // add the styling of the todo item using the class 'bubble-business'
     span.classList.add("bubble-business");
+    // add the styling of the category using the class 'todo-category'
+    category.classList.add("todo-category");
     // add the styling of the todo item using the class 'bubble-business'
     content.classList.add("todo-content");
     // add the styling of the todo item using the class 'todo-action'
@@ -59,7 +62,9 @@ function displayTodos() {
     // add the styling of the todo item using the class 'todo-delete-button'
     deleteButton.classList.add("todo-delete-button");
 
-    // change the content to show the actual content for the TODO item
+    // display the `category` for each TODO item
+    category.innerHTML = "#" + todo.category;
+    // display the actual content for the TODO item
     content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
 
     // display the 'edit' and 'delete' texts button according on the page
@@ -77,6 +82,7 @@ function displayTodos() {
 
     // so that the whole thing is displayed on the page
     todoItem.appendChild(label);
+    todoItem.appendChild(category);
     todoItem.appendChild(content);
     todoItem.appendChild(actions);
 

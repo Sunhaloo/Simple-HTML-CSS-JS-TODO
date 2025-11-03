@@ -518,6 +518,20 @@ input:checked ~ .bubble-business::after {
   flex: 1 1 0%;
 }
 
+/* style each category found in between the checkbox and TODO content */
+.todo-category {
+  /* change the padding */
+  padding: 0.5rem;
+  /* change the margin */
+  margin: 0.2rem;
+  /* change the border radius */
+  border-radius: 0.5rem;
+  /* change the background colour */
+  background-color: var(--foreground);
+  /* change the text colour */
+  color: var(--background);
+}
+
 /* style also the `<input>` tag when inserting / changing content of TODO item */
 .todo-form-section .todo-content input {
   /* take the whole available width */
