@@ -23,7 +23,7 @@
 
 > [!INFO] Resource(s)
 >
-> - This file is going to referring to the note / file called '[[Javascript - Document Object Model ( DOM )]]'
+> - This file is going to referring to the note / file called 'Javascript - Document Object Model ( DOM )'
 > - <https://www.youtube.com/watch?v=6eFwtaZf6zc>
 > - <https://www.youtube.com/watch?v=SeKQSQDUMDQ>
 
@@ -466,9 +466,9 @@ input:checked ~ .bubble-business {
 }
 ```
 
-> [!INFO] What is that `~` syntax?
+> [!NOTE] What is that `~` syntax?
 >
-> > [!INFO] Resource(s)
+> > [!NOTE] Resource(s)
 > >
 > > - <https://www.w3schools.com/Css/css_combinators.asp>
 >
@@ -500,7 +500,7 @@ input:checked ~ .bubble-business {
 
 ## Colour Shifting Text Logo
 
-> [!INFO] Resource(s)
+> [!NOTE] Resource(s)
 >
 > - <https://www.joshwcomeau.com/animation/color-shifting/>
 
@@ -1130,7 +1130,6 @@ The above code is pretty simple as it going to:
 
 - **Instagram**: <https://www.instagram.com/s.sunhaloo>
 - **YouTube**: <https://www.youtube.com/@s.sunhaloo>
-- **GitHub**: <https://www.github.com/Sunhaloo>
 
 ---
 
